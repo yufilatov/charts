@@ -1,0 +1,68 @@
+.chart-popup {
+    position: absolute;
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    display: block;
+    border-bottom: 5px solid white;
+    background-color: white;
+    font-size: 12px;
+    font-family: "Proxima Nova";
+    text-align: left;
+    min-width: 250px;
+    min-height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -105%); // IE
+    // transform: translate(-50%, calc(-100% - 5px)); // Chrome
+
+    &:after {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 0px;
+        margin-left: 0px;
+        top: 50%;
+        left: 50%;
+        bottom: 0;
+        border: 10px solid transparent;
+        border-bottom: 0;
+        border-top: 15px solid white;
+        transform: translate(-50%, 100%);
+    }
+
+    // dl {
+    //   width: 100%;
+    //   padding: 16px;
+    // }
+
+    // dt {
+    //   float: left;
+    //   width: 112px;
+    //   padding-bottom: 8px;
+    //   margin-left: 16px;
+    //   font-family: "Proxima Nova";
+    //   font-size: 12px;
+    //   font-weight: 600;
+    //   line-height: 1.5;
+    //   letter-spacing: 0.2px;
+    //   color: #000;
+    //   position: relative;
+    // }
+
+    // dd {
+    //   float: left;
+    //   padding-bottom: 8px;
+    //   font-family: "Proxima Nova";
+    //   font-size: 12px;
+    //   width: 80px;
+    //   line-height: 1.5;
+    //   letter-spacing: 0.2px;
+    //   font-weight: normal;
+    //   color: #000;
+    // }
+}

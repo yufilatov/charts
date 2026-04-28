@@ -1,0 +1,191 @@
+.title {
+  display: flex;
+}
+
+.app-chart {
+  width: 900px;
+  height: 900px;
+  margin-left: -200px;
+}
+
+.popup {
+  width: 250px;
+  min-height: 150px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid rgba(145, 145, 145, 0.3);
+    margin: 0 10px;
+    margin-bottom: 5px;
+  }
+
+  dl {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  dt {
+    float: left;
+    min-width: 100px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    color: #000;
+    position: relative;
+    margin-right: 0;
+  }
+
+  dd {
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    width: 100px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    font-weight: normal;
+    color: #000;
+  }
+
+  &-title {
+    font-family: "Proxima Nova";
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 17px 16px 17px 5px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+  }
+
+  .land {
+    dt,
+    dd {
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 10px;
+
+  &-big {
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 10px 10px;
+  }
+}
+
+.info {
+  width: 260px;
+  height: 100%;
+  border: 1px solid black;
+
+  dl {
+    width: 100%;
+    margin: 0 5px;
+  }
+
+  dt {
+    float: left;
+    width: 120px;
+    margin: 0px 5px 5px 5px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #000;
+    position: relative;
+    margin-right: 0;
+  }
+
+  dd {
+    float: left;
+    margin: 0px 5px 5px 5px;
+    font-size: 14px;
+    width: 120px;
+    letter-spacing: 0.2px;
+    font-weight: normal;
+    color: #000;
+  }
+}
+
+h5 {
+  margin: 0;
+  width: 240px;
+}
+
+.legend .legend-scale ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+.legend .legend-scale ul li {
+  display: block;
+  float: left;
+  width: 50px;
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 80%;
+  list-style: none;
+}
+.legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 15px;
+  width: 50px;
+}
+
+.legend-labels {
+  li {
+    &:first-child {
+      > span {
+        background: rgb(180, 149, 91);
+      }
+    }
+  }
+  li {
+    &:nth-child(2) {
+      > span {
+        background: rgb(154, 124, 68);
+      }
+    }
+  }
+  li {
+    &:nth-child(3) {
+      > span {
+        background: rgb(128, 99, 45);
+      }
+    }
+  }
+  li {
+    &:nth-child(4) {
+      > span {
+        background: rgb(102, 74, 23);
+      }
+    }
+  }
+  li {
+    &:nth-child(5) {
+      > span {
+        background: rgb(76, 49, 0);
+      }
+    }
+  }
+}
+
+.legend {
+  margin-left: 30px;
+}

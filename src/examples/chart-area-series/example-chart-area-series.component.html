@@ -1,0 +1,22 @@
+<app-chart [margin]="margin">
+    <app-chart-x-axis
+        [range]="range.x"
+        [ticks]="ticksX"
+    ></app-chart-x-axis>
+    <app-chart-y-axis
+        [range]="range.y"
+        [ticks]="ticksY"
+    ></app-chart-y-axis>
+    <app-chart-series
+        type="area"
+        [data]="data$ | async"
+        [style]="style"
+        [range]="range"
+    ></app-chart-series>
+    <app-chart-series
+        type="grid"
+        [step]="gridStep"
+        [style]="gridStyle"
+        [range]="range"
+    ></app-chart-series>
+</app-chart>

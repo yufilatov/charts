@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    app-chart {
+        width: 200px;
+        height: 200px;
+    }
+}

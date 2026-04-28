@@ -1,0 +1,33 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px 0;
+
+    .team {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 10px 0;
+        // flex: 1;
+    }
+
+    .chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    app-chart {
+        width: 10rem;
+        height: 10rem;
+        margin: .5rem 0;
+
+        &.area {
+            width: 600px;
+            height: 200px;
+        }
+    }
+}

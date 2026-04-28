@@ -1,0 +1,17 @@
+<app-chart [margin]="margin">
+    <app-chart-x-axis
+        [range]="range.x"
+        [ticks]="ticksX"
+    ></app-chart-x-axis>
+    <app-chart-y-axis
+        [range]="range.y"
+        [ticks]="ticksY"
+        [reverse]="true"
+    ></app-chart-y-axis>
+    <app-chart-series
+        type="scatter"
+        [data]="data$ | async"
+        [style]="style"
+        [range]="range"
+    ></app-chart-series>
+</app-chart>

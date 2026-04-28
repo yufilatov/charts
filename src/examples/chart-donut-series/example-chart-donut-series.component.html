@@ -1,0 +1,18 @@
+
+@for(chart of data$ | async; track chart) {
+    @let team = chart.standings.all;
+
+    <div class="chart">
+        {{chart.team.name}}
+        <app-chart>
+            <app-chart-series
+                type="donut"
+                [style]="style"
+                [data]="[team.win, team.draw, team.lose]"
+            ></app-chart-series>
+        </app-chart>
+        W: {{team.win}}
+        D: {{team.draw}}
+        L: {{team.lose}}
+    </div>
+}

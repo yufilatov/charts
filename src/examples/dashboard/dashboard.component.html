@@ -1,0 +1,125 @@
+@let team1 = team1$ | async;
+@let team2 = team2$ | async;
+
+<div style="display: flex; gap: 10px;">
+    <ng-container [ngTemplateOutlet]="teamA" [ngTemplateOutletContext]="{team: team1}"></ng-container>
+    <ng-container [ngTemplateOutlet]="teamA" [ngTemplateOutletContext]="{team: team2}"></ng-container>
+</div>
+
+<ng-template #teamA let-team="team">
+    @let stats = team?.standings;
+
+    <div class="team">
+    <div style="width: 100%; display: flex; gap: 30px;">
+        <img [src]="team?.team?.logo" style="width: 50px; height: 50px;">
+        <!-- <img [src]="team?.venue?.image" style="width: 400px; height: 250px;"> -->
+        <dl>
+            <dt><strong>Name: </strong>{{team?.team?.name}}</dt>
+            <dt><strong>Country: </strong>{{team?.team?.country}}</dt>
+            <dt><strong>Stadium: </strong>{{team?.venue?.name}}</dt>
+        </dl>
+    </div>
+
+    <div style="display: flex; gap: 0 10px;">
+        <div class="chart">
+            Stats All
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.all.win, stats?.all.draw, stats?.all.lose]"
+                    label="38"
+                ></app-chart-series>
+            </app-chart>
+            {{stats?.all.win}} {{stats?.all.draw}} {{stats?.all.lose}}
+        </div>
+
+        <div class="chart">
+            Stats Home
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.home.win, stats?.home.draw, stats?.home.lose]"
+                    label="19"
+                ></app-chart-series>
+            </app-chart>
+            {{stats?.home.win}} {{stats?.home.draw}} {{stats?.home.lose}}
+        </div>
+
+        <div class="chart">
+            Stats Away
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.away.win, stats?.away.draw, stats?.away.lose]"
+                    label="19"
+                ></app-chart-series>
+            </app-chart>
+            {{stats?.away.win}} {{stats?.away.draw}} {{stats?.away.lose}}
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 0 10px;">
+        <div class="chart">
+            Goals scored
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.home.goals.for, stats?.away.goals.for]"
+                    [label]="stats?.all.goals.for"
+                ></app-chart-series>
+            </app-chart>
+        </div>
+        <div class="chart">
+            Goals conceded
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.home.goals.against, stats?.away.goals.against]"
+                    [label]="stats?.all.goals.against"
+                ></app-chart-series>
+            </app-chart>
+        </div>
+        <div class="chart">
+            Goals difference
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.goalsDiff]"
+                    [label]="stats?.goalsDiff"
+                ></app-chart-series>
+            </app-chart>
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 0 10px;">
+        <div class="chart">
+            Clean Sheet
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.clean_sheet.home, stats?.clean_sheet.away]"
+                    [label]="stats?.clean_sheet.total"
+                ></app-chart-series>
+            </app-chart>
+        </div>
+        <div class="chart">
+            Penalty
+            <app-chart>
+                <app-chart-series
+                    type="donut"
+                    [style]="style"
+                    [data]="[stats?.penalty.scored.total, stats?.penalty.missed.total]"
+                    [label]="stats?.penalty.total"
+                ></app-chart-series>
+            </app-chart>
+        </div>
+    </div>
+    </div>
+</ng-template>

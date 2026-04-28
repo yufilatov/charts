@@ -1,0 +1,15 @@
+@for(chart of data$ | async; track chart) {
+    @let team = chart.standings;
+
+    <div class="chart">
+        {{chart.team.name}}
+        <app-chart>
+            <app-chart-series
+                type="double-donut"
+                [style]="style"
+                [data]="[[team.home.goals.for, team.away.goals.for], [team.home.goals.against, team.away.goals.against]]">
+            </app-chart-series>
+        </app-chart>
+        {{team.home.goals.for}} {{team.away.goals.for}} | {{team.home.goals.against}} {{team.away.goals.against}}
+    </div>
+}

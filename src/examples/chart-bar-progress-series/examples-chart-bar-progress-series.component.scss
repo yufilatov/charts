@@ -1,0 +1,50 @@
+.container {
+    width: calc(100% - 5px);
+    margin: 5px 20px;
+}
+
+.chart {
+    &-container {
+        width: 70%;
+        height: 820px;
+    }
+
+    &-ticks {
+        font-size: 18px;
+        font-weight: normal;
+        text-transform: lowercase;
+        text-transform: capitalize;
+    }
+
+    &-title {
+        font-weight: 600;
+        padding-bottom: 25px;
+        letter-spacing: 1px;
+        display: flex;
+
+        >div:first-child {
+            padding-right: 50px;
+        }
+
+        >div:nth-child(2) {
+            width: 15px;
+            height: 15px;
+            background-color: #80b436;
+            margin-right: 20px;
+        }
+
+        >div:nth-child(3) {
+            width: 15px;
+            height: 15px;
+            background-color: #feb74b;
+            margin: 0px 20px;
+        }
+
+        >div:nth-child(4) {
+            width: 15px;
+            height: 15px;
+            background-color: #dd0d47;
+            margin: 0px 20px;
+        }
+    }
+}

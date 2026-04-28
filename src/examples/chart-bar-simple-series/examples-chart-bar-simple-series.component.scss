@@ -1,0 +1,94 @@
+:host {
+    display: flex;
+    gap: 1rem;
+
+    >div {
+        flex: 1;
+    }
+
+    app-chart {
+        height: 1.5rem;
+    }
+}
+
+// .container {
+//     display: flex;
+// }
+
+// .chart {
+//     &-column {
+//         width: 50%;
+//     }
+
+//     &-container {
+//         display: flex;
+//         width: 600px;
+//         height: 20px;
+//         // padding: 0px 0px 20px 0px;
+//         font-size: 18px;
+//         font-family: 'Proxima Nova Regular';
+//         letter-spacing: 1px;
+
+//         .title {
+//             width: 180px;
+//             line-height: 16px;
+//         }
+
+//         .chart {
+//             width: 350px;
+//         }
+
+//         .total {
+//             width: 50px;
+//             text-align: center;
+//             font-weight: 600;
+//         }
+//     }
+
+//     &-title {
+//         font-weight: 600;
+//         padding-bottom: 25px;
+//         letter-spacing: 1px;
+//         display: flex;
+
+//         >div:first-child {
+//             padding-right: 50px;
+//         }
+//     }
+// }
+
+// .for {
+//     .home {
+//         width: 15px;
+//         height: 15px;
+//         background-color: #94c31a;
+//         margin: 0 10px;
+//     }
+
+//     .away {
+//         width: 15px;
+//         height: 15px;
+//         background-color: #bedb75;
+//         margin: 0px 10px;
+//     }
+// }
+
+// .against {
+//     .home {
+//         width: 15px;
+//         height: 15px;
+//         background-color: #f7a704;
+//         margin: 0 10px;
+//     }
+
+//     .away {
+//         width: 15px;
+//         height: 15px;
+//         background-color: #faca68;
+//         margin: 0px 10px;
+//     }
+// }
+
+// h5 {
+//     margin: 0;
+// }

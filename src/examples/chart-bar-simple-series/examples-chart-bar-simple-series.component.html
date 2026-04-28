@@ -1,0 +1,37 @@
+<div>
+    @for(chart of (data$ | async); track chart) {
+        @let teamStats = chart.standings;
+
+        <div class="chart-container">
+            {{chart.team.name}}
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <app-chart>
+                    <app-chart-series
+                        type="bar-simple"
+                        [data]="[teamStats.home.goals.for, teamStats.away.goals.for, 100 - teamStats.all.goals.for]"
+                        [style]="styleFor"
+                    ></app-chart-series>
+                </app-chart>
+                {{teamStats.all.goals.for}}
+            </div>
+        </div>
+    }
+</div>
+
+<!-- <div>
+    @for(club of (dataAgainst$ | async); track club) {
+        <div class="chart-container">
+            <div class="title">{{clubs[$index]}}</div>
+            <div class="chart">
+                <app-chart>
+                    <app-chart-series
+                        type="bar-simple"
+                        [data]="club"
+                        [style]="styleAgainst"
+                    ></app-chart-series>
+                </app-chart>
+            </div>
+            <div class="total">{{club[0] + club[1]}}</div>
+        </div>
+    }
+</div> -->

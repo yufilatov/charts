@@ -1,0 +1,28 @@
+@let values = (values$ | async) || [];
+@let ticksX = (ticks$ | async) || [];
+
+SEASON 2023/24
+
+<app-chart [margin]="margin">
+    <app-chart-series
+        type="bar"
+        [orientation]="'vertical'"
+        [data]="values"
+        [range]="range"
+        [style]="style"
+    ></app-chart-series>
+    <app-chart-series
+        type="grid"
+        [step]="gridStep"
+        [style]="gridStyle"
+        [range]="range"
+    ></app-chart-series>
+    <app-chart-x-axis
+        [range]="range.x"
+        [ticks]="ticksX"
+    ></app-chart-x-axis>
+    <app-chart-y-axis
+        [range]="range.y"
+        [ticks]="ticksY"
+    ></app-chart-y-axis>
+</app-chart>

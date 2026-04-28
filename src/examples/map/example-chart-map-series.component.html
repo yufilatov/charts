@@ -1,0 +1,73 @@
+@let data = data$  | async;
+@let current = current$  | async;
+
+<div class="title">
+    <h5>ENGLISH CLUBS ON THE MAP</h5>
+    <!-- <div class="legend">
+        <div class="legend-scale">
+            <ul class="legend-labels">
+                @for(l of legend; track l) {
+                    <li>
+                        <span></span>{{l}}M
+                    </li>
+                }
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<div style="display: flex;">
+    <div class="info">
+        @if(show) {
+            <div style="width: 100%; display: flex;justify-content: center;">
+                <div [ngClass]="getLogoBig(data?.properties?.name)"></div>
+            </div>
+            <dl>
+                <dt>Name:</dt>
+                <dd>{{ current?.properties?.EER13NM}}</dd>
+            </dl>
+        }
+        @else {
+            <div style="width: 100%; display: flex;justify-content: center;">
+                <div class="logo-big logo-deutschland"></div>
+            </div>
+            <dl>
+                <dt>Country:</dt>
+                <dd>England</dd>
+                <dt></dt>
+            </dl>
+        }
+    </div>
+  <app-chart>
+    <app-chart-series
+      type="map"
+      [data]="data"
+      [style]="style"
+      (onHover)="showData($event)"
+      (onLeave)="show=false"></app-chart-series>
+    <!-- <app-chart-popup for="map">
+      <ng-template let-$context>
+        <div class="popup">
+          <div class="popup-header">
+            <ng-container>
+              <div [ngClass]="getLogo($context.properties?.name)"></div>
+            </ng-container>
+            <h3 class="chart-popup-title">{{ $context.properties?.name }}</h3>
+          </div>
+          <dl class="land">
+            <dt>Area:</dt>
+            <dd>{{ $context.properties?.area }}</dd>
+            <dt>Density:</dt>
+            <dd>{{ $context.properties?.density }}</dd>
+            <dt>Time Zone:</dt>
+            <dd>{{ $context.properties?.timeZone }}</dd>
+            <dt>Bundesrat Votes:</dt>
+            <dd>
+              {{ $context.properties?.bundesratVotes }}
+            </dd>
+          </dl>
+        </div>
+      </ng-template>
+    </app-chart-popup> -->
+  </app-chart>
+</div>
