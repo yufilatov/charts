@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Basic'
+}
+
+@font-face {
+    font-family: "Basic";
+    src: url('assets/fonts/AlteHaasGroteskRegular.ttf');
+}
